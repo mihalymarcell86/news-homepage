@@ -32,10 +32,16 @@ body {
   padding: rem(28px) rem(16px) rem(80px);
   font-family: Inter, "sans-serif";
   position: relative;
+  @media (min-width: $breakpoint) {
+    padding-top: rem(89px);
+    padding-inline: div(165, 1440) * 100vw;
+    padding-bottom: rem(129px);
+  }
 }
 
 a:any-link {
   text-decoration: none;
+  color: currentColor;
 }
 
 .header {
@@ -43,34 +49,90 @@ a:any-link {
   justify-content: space-between;
   align-items: center;
   margin-bottom: rem(32px);
+  @media (min-width: $breakpoint) {
+    margin-bottom: rem(55px);
+  }
 }
 
 .header__logo {
   width: rem(45px);
+  @media (min-width: $breakpoint) {
+    width: rem(64.09px);
+  }
 }
 
 .menu-hamburger {
   cursor: pointer;
+  @media (min-width: $breakpoint) {
+    display: none;
+  }
 }
 
-.hero-img {
-  margin-bottom: rem(24px);
+.header__navigation {
+  display: none;
+  @media (min-width: $breakpoint) {
+    display: flex;
+    justify-content: center;
+    gap: rem(40px);
+    @include setFont(rem(15px), 26px, 400);
+    color: color(dark-grayish-blue);
+    & > a:hover {
+      color: color(soft-red);
+    }
+  }
+}
+
+.main {
+  @media (min-width: $breakpoint) {
+    display: grid;
+    grid-template-columns: div(730, 1440) * 100vw div(350, 1440) * 100vw;
+    // grid-template-rows: repeat(2, min-content);
+    // grid-template-areas: "top middle" "bottom bottom";
+    column-gap: rem(30px);
+    row-gap: rem(71px);
+  }
 }
 
 .section-top {
   margin-bottom: rem(64px);
+  @media (min-width: $breakpoint) {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    row-gap: rem(28px);
+    column-gap: rem(30px);
+    & > picture {
+      grid-column: span 2;
+      font-size: 0;
+    }
+  }
+}
+
+.hero-img {
+  margin-bottom: rem(24px);
+  @media (min-width: $breakpoint) {
+    margin: 0;
+  }
 }
 
 .section-top__heading {
   @include setFont(rem(40px), 40px, 800);
   margin-bottom: em(16px, 40px);
   color: color(very-dark-blue);
+  @media (min-width: $breakpoint) {
+    @include setFont(rem(56px), 56px);
+    margin: 0;
+  }
 }
 
 .section-top__paragraph {
   @include setFont(rem(15px), 26px, 400);
   margin-bottom: em(24px, 15px);
   color: color(dark-grayish-blue);
+  @media (min-width: $breakpoint) {
+    margin-bottom: em(29px, 15px);
+  }
 }
 
 .section-top__cta-button {
@@ -91,12 +153,20 @@ a:any-link {
   background-color: color(very-dark-blue);
   padding: rem(24px) rem(20px);
   margin-bottom: rem(64px);
+  @media (min-width: $breakpoint) {
+    padding: rem(32px) rem(24px);
+    margin: 0;
+  }
 }
 
 .section-middle__heading {
   color: color(soft-orange);
   @include setFont(rem(32px), 32px, 700);
   margin-bottom: em(35px, 32px);
+  @media (min-width: $breakpoint) {
+    @include setFont(rem(40px), 40px);
+    margin-bottom: em(34px, 40px);
+  }
 }
 
 .section-middle__subheading {
@@ -123,6 +193,11 @@ a:any-link {
   display: flex;
   flex-direction: column;
   gap: rem(32px);
+  @media (min-width: $breakpoint) {
+    flex-direction: row;
+    grid-column: span 2;
+    gap: rem(30px);
+  }
 }
 
 .section-bottom__article {
