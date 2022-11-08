@@ -18,6 +18,10 @@
     margin: 0;
     padding: 0;
   }
+
+  img {
+    max-width: 100%;
+  }
 }
 
 $units: 1cm, 1mm, 1Q, 1in, 1pc, 1pt, 1px, 1em, 1ex, 1ch, 1rem, 1vw, 1vh, 1vmin,
