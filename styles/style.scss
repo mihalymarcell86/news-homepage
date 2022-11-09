@@ -32,9 +32,12 @@ body {
   padding: rem(28px) rem(16px) rem(80px);
   font-family: Inter, "sans-serif";
   position: relative;
+  @media (min-width: 500px) {
+    padding-inline: lerp_min(500px, 16px, 1000px, 150px);
+  }
   @media (min-width: $breakpoint) {
     padding-top: rem(89px);
-    padding-inline: div(165, 1440) * 100vw;
+    padding-inline: lerp_min($breakpoint, 50px, 1440px, 165px);
     padding-bottom: rem(129px);
   }
 }
@@ -49,8 +52,10 @@ a:any-link {
   justify-content: space-between;
   align-items: center;
   margin-bottom: rem(32px);
+  margin-inline: auto;
   @media (min-width: $breakpoint) {
     margin-bottom: rem(55px);
+    max-width: none;
   }
 }
 
@@ -63,14 +68,14 @@ a:any-link {
 
 .menu-hamburger {
   cursor: pointer;
-  @media (min-width: $breakpoint) {
+  @media (min-width: 600px) {
     display: none;
   }
 }
 
 .header__navigation {
   display: none;
-  @media (min-width: $breakpoint) {
+  @media (min-width: 600px) {
     display: flex;
     justify-content: center;
     gap: rem(40px);
@@ -83,13 +88,14 @@ a:any-link {
 }
 
 .main {
+  max-width: rem(470px);
+  margin-inline: auto;
   @media (min-width: $breakpoint) {
     display: grid;
-    grid-template-columns: div(730, 1440) * 100vw div(350, 1440) * 100vw;
-    // grid-template-rows: repeat(2, min-content);
-    // grid-template-areas: "top middle" "bottom bottom";
+    grid-template-columns: div(730, 1110) * 100% div(350, 1110) * 100%;
     column-gap: rem(30px);
     row-gap: rem(71px);
+    max-width: none;
   }
 }
 
@@ -197,6 +203,7 @@ a:any-link {
     flex-direction: row;
     grid-column: span 2;
     gap: rem(30px);
+    justify-content: space-between;
   }
 }
 
@@ -205,6 +212,7 @@ a:any-link {
   gap: rem(24px);
   & > img {
     width: rem(100px);
+    align-self: center;
   }
 }
 
