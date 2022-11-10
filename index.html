@@ -12,7 +12,7 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="styles/style.css" />
-
+    <script src="./scripts/mobileMenu.js" defer></script>
     <title>Frontend Mentor | News homepage</title>
   </head>
   <body>
@@ -26,7 +26,13 @@
         alt="open mobile menu"
         class="menu-hamburger"
       />
+      <div class="navigation__backdrop"></div>
       <nav class="header__navigation">
+        <img
+          src="./assets/images/icon-menu-close.svg"
+          alt="close mobile menu"
+          class="menu-hamburger-close"
+        />
         <a href="#">Home</a><a href="#">New</a><a href="#">Popular</a
         ><a href="#">Trending</a><a href="#">Categories</a>
       </nav>

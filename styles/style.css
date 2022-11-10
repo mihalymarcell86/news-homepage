@@ -39,6 +39,7 @@ body {
   padding: 1.8666666667rem 1.0666666667rem 5.3333333333rem;
   font-family: Inter, "sans-serif";
   position: relative;
+  overflow-x: hidden;
 }
 @media (min-width: 500px) {
   body {
@@ -81,30 +82,64 @@ a:any-link {
   }
 }
 
-.menu-hamburger {
+.menu-hamburger-close, .menu-hamburger {
   cursor: pointer;
 }
 @media (min-width: 600px) {
-  .menu-hamburger {
+  .menu-hamburger-close, .menu-hamburger {
     display: none;
   }
 }
 
-.header__navigation {
+.menu-hamburger-close {
+  width: 2.0333333333rem;
+  position: absolute;
+  top: 1.82rem;
+  right: 1.3866666667rem;
+}
+
+.navigation__backdrop {
   display: none;
+  position: absolute;
+  inset: 0;
+  background-color: hsla(240deg, 100%, 5%, 0.5);
+}
+
+.header__navigation {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 17.0666666667rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  translate: 100%;
+  transition: translate 0.2s ease;
+  font-size: 1.2rem;
+  line-height: 1.3333333333;
+  font-weight: 400;
+  padding-top: 9.6rem;
+  padding-left: 1.6rem;
+  color: hsl(240deg, 100%, 5%);
+}
+.header__navigation > a:hover {
+  color: hsl(5deg, 85%, 63%);
 }
 @media (min-width: 600px) {
   .header__navigation {
-    display: flex;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    translate: none;
+    padding: 0;
     justify-content: center;
     gap: 2.6666666667rem;
     font-size: 1rem;
     line-height: 1.7333333333;
     font-weight: 400;
     color: hsl(236deg, 13%, 42%);
-  }
-  .header__navigation > a:hover {
-    color: hsl(5deg, 85%, 63%);
   }
 }
 
