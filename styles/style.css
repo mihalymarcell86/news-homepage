@@ -36,6 +36,7 @@ img {
   }
 }
 body {
+  background-color: hsl(36deg, 100%, 99%);
   padding: 1.8666666667rem 1.0666666667rem 5.3333333333rem;
   font-family: Inter, "sans-serif";
   position: relative;
@@ -166,8 +167,7 @@ a:any-link {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, min-content);
-    row-gap: 1.8666666667rem;
-    column-gap: 2rem;
+    gap: 2rem;
   }
   .section-top > picture {
     grid-column: span 2;
@@ -196,6 +196,7 @@ a:any-link {
     font-size: 3.7333333333rem;
     line-height: 1;
     margin: 0;
+    align-self: center;
   }
 }
 

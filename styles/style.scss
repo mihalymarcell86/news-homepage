@@ -29,6 +29,7 @@
 }
 
 body {
+  background-color: color(off-white);
   padding: rem(28px) rem(16px) rem(80px);
   font-family: Inter, "sans-serif";
   position: relative;
@@ -144,8 +145,7 @@ a:any-link {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, min-content);
-    row-gap: rem(28px);
-    column-gap: rem(30px);
+    gap: rem(30px);
     & > picture {
       grid-column: span 2;
       font-size: 0;
@@ -167,6 +167,7 @@ a:any-link {
   @media (min-width: $breakpoint) {
     @include setFont(rem(56px), 56px);
     margin: 0;
+    align-self: center;
   }
 }
 
